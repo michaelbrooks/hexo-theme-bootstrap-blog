@@ -1,9 +1,13 @@
 <%- partial('_partial/head') %>
 <body>
-  <%- partial('_partial/masthead') %>
+  <% if (theme.background_image) { %>
+    <div class="background-image"
+         style="background-image: url(<%= theme.background_image %>)"/>
+  <% } %>
   <div class="container">
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
-    <div class="row">
+    <%- partial('_partial/masthead') %>
+    <div class="row page-content">
         <div class="col-sm-8 blog-main">
           <%- body %>
         </div>

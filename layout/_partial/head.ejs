@@ -28,9 +28,14 @@
   <% if (theme.favicon){ %>
     <link rel="icon" href="<%- theme.favicon %>">
   <% } %>
-  <% if (config.highlight.enable){ %>
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <% } %>
+
+  <%
+  var fonts = "Noticia+Text:400,400italic,700|Open+Sans:400,400italic,700";
+  if (config.highlight.enable) {
+    fonts += "|Source+Code+Pro";
+  }
+  %>
+  <link href='//fonts.googleapis.com/css?family=<%= fonts %>0' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
