@@ -2,18 +2,21 @@
 <body>
   <% if (theme.background_image) { %>
     <div class="background-image"
-         style="background-image: url(<%= theme.background_image %>)"/>
+         style="background-image: url(<%= url_for(theme.background_image) %>)">
+     </div>
   <% } %>
   <div class="container">
     <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
     <%- partial('_partial/masthead') %>
-    <div class="row page-content">
-        <div class="col-sm-8 blog-main">
+    <div class="page-content-container">
+      <div class="row">
+        <div class="col-sm-9 blog-main">
           <%- body %>
         </div>
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+        <div class="col-sm-3 blog-sidebar">
           <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
         </div>
+      </div>
     </div>
   </div>
   <%- partial('_partial/footer', null, {cache: !config.relative_link}) %>

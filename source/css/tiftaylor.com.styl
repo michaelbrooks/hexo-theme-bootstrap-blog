@@ -1,5 +1,27 @@
+$backgroundColor = #693206;
+$secondaryColor = #0B1E46;
+$secondaryLightColor = #374D7D;
+$tertiaryColor = #095505;
+$textColor = #D4BCA0;
 
-.background-image {
+$linkColor = darken($textColor, 30%);
+
+body
+  color: $textColor;
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+  color: $textColor;
+
+a
+  color: $linkColor;
+  &:hover
+    color: lighten($linkColor, 30%);
+
+.background-image
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -7,8 +29,80 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
 
-.page-content {
-  background: rgba(105, 50, 6, 0.83)
-}
+.page-content-container
+  background: alpha($backgroundColor, 0.83);
+
+.blog-title a
+  color: $backgroundColor;
+  text-decoration: none;
+  &:hover
+    color: $backgroundColor;
+
+.blog-description
+  color: $backgroundColor;
+
+.blog-footer
+  background: none;
+  border-top: none;
+  color: @textColor;
+
+#footer-info
+    margin: auto;
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.4);
+
+.blog-main
+  font-size: 14px;
+
+.article
+.archives-wrap
+  padding: 20px;
+
+.archive-year-wrap
+  border: none;
+  a
+    color: $textColor;
+
+.navbar
+  background-color: transparent;
+  box-shadow: none;
+
+.navbar-inverse
+  .navbar-nav>li>a
+    color: $backgroundColor;
+
+    &:focus
+    &:hover
+      color: lighten($backgroundColor, 20%);
+
+    &.active
+      color: $backgroundColor;
+      cursor: default;
+
+.article-header h1 a
+  color: $textColor;
+  &:hover
+    color: lighten($textColor, 30%);
+
+.article-meta
+  color: desaturate($textColor, 60%);
+
+.article-footer
+  a
+    color: desaturate($linkColor, 60%);
+    &:hover
+      color: lighten(desaturate($linkColor, 60%), 30%);
+
+#article-nav>li>a
+  border: none;
+  &:hover
+    border: none;
+
+.nav>li>a
+  &:focus
+  &:hover
+    background: alpha(#fff, 0.2);
